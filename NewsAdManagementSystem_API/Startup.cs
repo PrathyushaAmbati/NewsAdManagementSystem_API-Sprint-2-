@@ -40,7 +40,6 @@ namespace NewsAdManagementSystem_API
             services.AddTransient<ICustomerRepository, CustomerRepository>();
             services.AddTransient<CustomerService, CustomerService>();
             //CustomerAdDetails
-
             services.AddTransient<ICustomerAdRepository, CustomerAdRepository>();
             services.AddTransient<CustomerAdService, CustomerAdService>();
 

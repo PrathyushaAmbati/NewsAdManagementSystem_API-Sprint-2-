@@ -39,15 +39,7 @@ namespace NewsAdManagementSystem_DAL.Repository
             return _connection.EmployeeDetails.Find(EmpID);
         }
 
-        public void GetEmployDetailsById(int empID)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void RemoveEmploy(int empID)
-        {
-            throw new NotImplementedException();
-        }
+       
 
         public void UpdateEmploy(EmployDetails employDetails)
         {
