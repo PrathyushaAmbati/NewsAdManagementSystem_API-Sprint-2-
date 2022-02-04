@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using NewsAdManagementSystem_DAL.Data;
+using NewsAdManagementSystem_DAL.Repository.CustomerDetails;
 using NewsAdManagementSystem_Entity.Models;
 using System;
 using System.Collections.Generic;

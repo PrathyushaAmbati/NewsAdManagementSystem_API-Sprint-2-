@@ -8,7 +8,7 @@ namespace NewsAdManagementSystem_Entity.Models
     public class AdvertisementDetailsClass
     {
         [Key]     
-        public int AdCode { get; set; }
+        public  int AdCode { get; set; }
         public int PageNo { get; set; }
         public string PageLocation { get; set; }
         public int BWColorCost{ get; set; }

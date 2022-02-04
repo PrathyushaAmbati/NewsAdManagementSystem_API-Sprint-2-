@@ -25,13 +25,13 @@ namespace NewsAdManagementSystem_BAL.Services
         {
             _iEmployRepository.DeleteEmploy(EmpID);
         }
-        public void GetEmployDetailsByID(int EmpID)
+        public EmployDetails GetEmployDetailsByID(int EmpID)
         {
-            _iEmployRepository.GetEmployDetailsByID(EmpID);
+            return _iEmployRepository.GetEmployDetailsByID(EmpID);
         }
-        public void GetEmployDetails()
+        public IEnumerable<EmployDetails> GetEmployDetails()
         {
-            _iEmployRepository.GetEmployDetails();
+            return _iEmployRepository.GetEmployDetails();
         }
     }
 }

@@ -25,13 +25,13 @@ namespace NewsAdManagementSystem_BAL.Services
         {
             _iCustomerAdRepository.DeleteCustomerAd(SNo);
         }
-        public void GetCustomerAdDetailsByID(int SNo)
+        public CustomerAdDetailsClass GetCustomerAdDetailsByID(int SNo)
         {
-            _iCustomerAdRepository.GetCustomerAdDetailsByID(SNo);
+            return _iCustomerAdRepository.GetCustomerAdDetailsByID(SNo);
         }
-        public void GetCustomerAdDetails()
+        public IEnumerable<CustomerAdDetailsClass> GetCustomerAdDetails()
         {
-            _iCustomerAdRepository.GetCustomerAdDetails();
+           return _iCustomerAdRepository.GetCustomerAdDetails();
         }
     }
 }

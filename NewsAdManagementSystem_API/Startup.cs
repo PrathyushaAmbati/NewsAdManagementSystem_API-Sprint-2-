@@ -9,6 +9,7 @@ using Microsoft.Extensions.Logging;
 using NewsAdManagementSystem_BAL.Services;
 using NewsAdManagementSystem_DAL.Data;
 using NewsAdManagementSystem_DAL.Repository;
+using NewsAdManagementSystem_DAL.Repository.CustomerDetails;
 using System;
 using System.Collections.Generic;
 using System.Linq;

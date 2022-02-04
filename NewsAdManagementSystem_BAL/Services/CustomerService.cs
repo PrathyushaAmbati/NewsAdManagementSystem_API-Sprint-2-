@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using NewsAdManagementSystem_Entity.Models;
+using NewsAdManagementSystem_DAL.Repository.CustomerDetails;
 
 namespace NewsAdManagementSystem_BAL.Services
 {
@@ -25,13 +26,13 @@ namespace NewsAdManagementSystem_BAL.Services
         {
             _iCustomerRepository.DeleteCustomer(CustID);
         }
-        public void GetCustomerDetailsByID(int CustID)
+        public CustomerDetailsClass GetCustomerDetailsByID(int CustID)
         {
-            _iCustomerRepository.GetCustomerDetailsByID(CustID);
+           return _iCustomerRepository.GetCustomerDetailsByID(CustID);
         }
-        public void GetCustomerDetails()
+        public IEnumerable<CustomerDetailsClass> GetCustomerDetails()
         {
-            _iCustomerRepository.GetCustomerDetails();
+           return _iCustomerRepository.GetCustomerDetails();
         }
     }
 

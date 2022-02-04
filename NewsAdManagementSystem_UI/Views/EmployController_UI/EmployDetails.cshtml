@@ -1,0 +1,115 @@
+﻿@model NewsAdManagementSystem_Entity.Models.EmployDetails
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@{ ViewData["Title"] = "Employee Registration";}
+<div>
+    <a class="btn btn-info" asp-action="Index">Employee Details</a>
+</div>
+<form method="post">
+    <h1>Registration Form</h1>
+    <div>
+        <table>
+            <tr>
+                <td>Employee ID :</td>
+                <td>
+                    <input type="text" value="" asp-for="EmpID" />
+                </td>
+            </tr>
+            <tr>
+                <td>Employee Name :</td>
+                <td>
+                    <input type="text" value="" asp-for="EmpName" />
+                </td>
+            </tr>
+            <tr>
+                <td>Contact Number :</td>
+                <td>
+                    <input type="text" value="" asp-for="EmpContactNo" />
+                </td>
+            </tr>
+            <tr>
+                <td>EmailID :</td>
+                <td>
+                    <input type="text" value="" asp-for="EmailID" />
+                </td>
+            </tr>
+            <tr>
+
+                <td>Country </td>
+                <td>
+                    <p>
+                        <select asp-for="Country">
+                            <option>Select Country</option>
+                            <option value="India">India</option>
+                            <option value="Australia">Australia</option>
+                            <option value="Srilanka">Srilanka</option>
+                            <option value="Bangladesh">Bangladesh</option>
+                            <option value="Japan">Japan</option>
+                        </select>
+                    </p>
+
+                </td>
+            </tr>
+            <tr>
+                <td>State</td>
+                <td>
+                    <p>
+                        <select asp-for="State">
+                            <option>Select State</option>
+                            <option value="Andhra Pradesh">Andhra Pradesh</option>
+                            <option value="Telangana">Telangana</option>
+                            <option value="Karnataka">Karnataka</option>
+                            <option value="Tamilnadu">Tamilnadu</option>
+                            <option value="Maharashtra">Maharashtra</option>
+                        </select>
+                    </p>
+
+                </td>
+            </tr>
+            <tr>
+                <td>City</td>
+                <td>
+                    <p>
+                        <select asp-for="City">
+                            <option>Select City</option>
+                            <option value="Ananthapur">Ananthapur</option>
+                            <option value="Hyderabad">Hyderabad</option>
+                            <option value="Banglore">Banglore</option>
+                            <option value="Chennai">Chennai</option>
+                            <option value="Mumbai">Mumbai</option>
+                        </select>
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>Set Password</td>
+                <td>
+                    <input type="text" value="" asp-for="Pwd" />
+                </td>
+            </tr>
+            <tr>
+                <td>Employee Role</td>
+                <td>
+                    <p>
+                        <input type="radio" asp-for="Role" value="Admin" />Admin
+                        <input type="radio" asp-for="Role" value="Employee" />Employee
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" value="Save" class="btn btn-success" />
+                </td>
+            </tr>
+        </table>
+        <div>
+            <hr />
+            @ViewBag.message
+            <hr />
+        </div>
+    </div>
+</form>

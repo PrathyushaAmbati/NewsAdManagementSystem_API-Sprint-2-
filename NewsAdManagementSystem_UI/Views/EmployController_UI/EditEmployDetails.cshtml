@@ -1,0 +1,85 @@
+﻿@model NewsAdManagementSystem_Entity.Models.EmployDetails
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<div>
+    <a class="btn btn-primary" asp-action="index">Show Employ Details</a>
+</div>
+
+<form method="post">
+
+    <div>
+        <h1>Edit Employee Details</h1>
+        <hr />
+        <table>
+            <tr>
+                <td>Employee ID</td>
+                <td>
+                    <input type="text" asp-for="EmpID" />
+                </td>
+            </tr>
+            <tr>
+                <td>Employee Name</td>
+                <td>
+                    <input type="text" asp-for="EmpName" />
+                </td>
+            </tr>
+            <tr>
+                <td>Contact Number</td>
+                <td>
+                    <input type="text" asp-for="EmpContactNo" />
+                </td>
+            </tr>
+            <tr>
+                <td>EmailID</td>
+                <td>
+                    <input type="text" asp-for="EmailID" />
+                </td>
+            </tr>
+            <tr>
+                <td>Country</td>
+                <td>
+                    <input type="text" asp-for="Country" />
+                </td>
+            </tr>
+            <tr>
+                <td>State</td>
+                <td>
+                    <input type="text" asp-for="State" />
+                </td>
+            </tr>
+            <tr>
+                <td>City</td>
+                <td>
+                    <input type="text" asp-for="City" />
+                </td>
+            </tr>
+            <tr>
+                <td>Set Password</td>
+                <td>
+                    <input type="text" asp-for="Pwd" />
+                </td>
+            </tr>
+            <tr>
+                <td>Employee Role</td>
+                <td>
+                    <input type="text" asp-for="Role" />
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" value="Update" class="btn btn-primary" />
+                </td>
+            </tr>
+        </table>
+
+        <div>
+            <hr />
+            @ViewBag.message
+            <hr />
+        </div>
+    </div>
+</form>

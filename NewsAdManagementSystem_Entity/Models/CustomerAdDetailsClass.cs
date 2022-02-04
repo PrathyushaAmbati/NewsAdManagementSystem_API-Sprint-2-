@@ -11,8 +11,17 @@ namespace NewsAdManagementSystem_Entity.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int SNo { get; set; }
-        public int EmpID { get; set; }
+
+        public EmployDetails EmployeeDetails { get; set; }
+        [ForeignKey("EmpID")]
+        public  int EmpID { get; set; }
+
+        public CustomerDetailsClass CustomerDetails { get; set; }
+        [ForeignKey("CustID")]
         public int CustID { get; set; }
+
+        public AdvertisementDetailsClass advertisementDetails { get; set; }
+        [ForeignKey("AdCode")]
         public int AdCode { get; set; }
         public DateTime DOI { get; set; }
         public DateTime DOP { get; set; }

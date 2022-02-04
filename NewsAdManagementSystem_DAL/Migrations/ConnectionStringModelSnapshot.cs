@@ -62,6 +62,9 @@ namespace NewsAdManagementSystem_DAL.Migrations
                     b.Property<int>("CustID")
                         .HasColumnType("int");
 
+                    b.Property<int?>("CustomerDetailsCustID")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("DOI")
                         .HasColumnType("datetime2");
 
@@ -69,6 +72,9 @@ namespace NewsAdManagementSystem_DAL.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<int>("EmpID")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("EmployeeDetailsEmpID")
                         .HasColumnType("int");
 
                     b.Property<string>("PageStatus")
@@ -80,7 +86,16 @@ namespace NewsAdManagementSystem_DAL.Migrations
                     b.Property<int>("UnitCost")
                         .HasColumnType("int");
 
+                    b.Property<int?>("advertisementDetailsAdCode")
+                        .HasColumnType("int");
+
                     b.HasKey("SNo");
+
+                    b.HasIndex("CustomerDetailsCustID");
+
+                    b.HasIndex("EmployeeDetailsEmpID");
+
+                    b.HasIndex("advertisementDetailsAdCode");
 
                     b.ToTable("CustomerAdDetails");
                 });
@@ -143,6 +158,27 @@ namespace NewsAdManagementSystem_DAL.Migrations
                     b.HasKey("EmpID");
 
                     b.ToTable("EmployeeDetails");
+                });
+
+            modelBuilder.Entity("NewsAdManagementSystem_Entity.Models.CustomerAdDetailsClass", b =>
+                {
+                    b.HasOne("NewsAdManagementSystem_Entity.Models.CustomerDetailsClass", "CustomerDetails")
+                        .WithMany()
+                        .HasForeignKey("CustomerDetailsCustID");
+
+                    b.HasOne("NewsAdManagementSystem_Entity.Models.EmployDetails", "EmployeeDetails")
+                        .WithMany()
+                        .HasForeignKey("EmployeeDetailsEmpID");
+
+                    b.HasOne("NewsAdManagementSystem_Entity.Models.AdvertisementDetailsClass", "advertisementDetails")
+                        .WithMany()
+                        .HasForeignKey("advertisementDetailsAdCode");
+
+                    b.Navigation("advertisementDetails");
+
+                    b.Navigation("CustomerDetails");
+
+                    b.Navigation("EmployeeDetails");
                 });
 #pragma warning restore 612, 618
         }
