@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\NewsAdManagementSystem_DAL\NewsAdManagementSystem_DAL.csproj" />
+    <ProjectReference Include="..\NewsAdManagementSystem_Entity\NewsAdManagementSystem_Entity.csproj" />
   </ItemGroup>
 
 </Project>

@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using NewsAdManagementSystem_DAL.Data;
 
 namespace NewsAdManagementSystem_DAL.Migrations
 {
     [DbContext(typeof(ConnectionString))]
-    partial class ConnectionStringModelSnapshot : ModelSnapshot
+    [Migration("20220205163413_pra")]
+    partial class pra
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
