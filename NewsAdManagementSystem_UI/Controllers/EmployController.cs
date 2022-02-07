@@ -68,26 +68,44 @@ namespace NewsAdManagementSystem_UI.Controllers
         
         //GET Method
         [HttpGet]
-        public IActionResult EditEmployDetails(int EmpID)//Update EmployDetails 
+        public async Task<IActionResult> EditEmployDetails(int EmpID)//Update EmployDetails 
         {
-            
-
-            return View();
-                        
+            EmployDetails employDetails = null;
+            using(HttpClient client=new HttpClient())
+            {
+                string endPoint = _configuration["WebApiBaseUrl"] + "Employ/GetEmployDetailsByID?EmpID=" + EmpID;
+                using(var response=await client.GetAsync(endPoint))
+                {
+                    if(response.StatusCode==System.Net.HttpStatusCode.OK)
+                    {
+                        var result = await response.Content.ReadAsStringAsync();
+                        employDetails = JsonConvert.DeserializeObject<EmployDetails>(result);
+                       
+                    }
+                }
+            }
+            return View(employDetails);
         }
+
+        //POST Method
         [HttpPost]
-        public async Task<IActionResult> EditEmployDetails([FromBody]EmployDetails employDetails)
+        public async Task<IActionResult> EditEmployDetails(EmployDetails employDetails)
         {
             using (HttpClient client = new HttpClient())
             {
                 StringContent content = new StringContent(JsonConvert.SerializeObject(employDetails), Encoding.UTF8, "application/json");
                 string endPoint = _configuration["WebApiBaseUrl"] + "Employ/UpdateEmploy";
-                using (var response = await client.PutAsync(endPoint, content))
+                using (var response = await client.PostAsync(endPoint, content))
                 {
                     if (response.StatusCode == System.Net.HttpStatusCode.OK)
                     {
-
-                        return RedirectToAction("ShowEmployDetails");
+                        ViewBag.status = "Ok";
+                        ViewBag.message = "Updated Successfully";
+                    }
+                    else
+                    {
+                        ViewBag.status = "Error";
+                        ViewBag.message = "Wrong Entries!";
                     }
                 }
             }

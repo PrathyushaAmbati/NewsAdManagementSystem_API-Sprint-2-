@@ -7,43 +7,34 @@
 
 <form method="post">
     <h2>Employee Registration</h2>
-    <div class="form-group">
-        <label for="EmpName">Full Name </label>
-        <input type="text" class="form-control" asp-for="EmpName" placeholder="enter name" required />
+    <div>
+        <label for="Empname">Full Name</label>
+        <input type="text" class="form-control" asp-for="EmpName" placeholder="Enter your name" required />
     </div>
-    <div class="form-group">
-        <label for="EmpContactNo">Mobile Number </label>
-        <input type="text" class="form-control" asp-for="EmpContactNo" placeholder="enter mobile number" required />
+    <div>
+        <label for="EmpContactNo">Mobile Number</label>
+        <input type="text" class="form-control" asp-for="EmpContactNo" placeholder="Enter mobile number" required />
     </div>
-    <div class="form-group">
-        <label for="EmailID">Email ID </label>
-        <input type="text" class="form-control" asp-for="EmailID" placeholder="enter email" required />
+    <div>
+        <label for="EmailID">Email ID</label>
+        <input type="text" class="form-control" asp-for="EmailID" placeholder="Enter your email id" required />
     </div>
-
-    <div class="form-group">
-        <label>Country </label>
-        <input type="text" class="form-control" asp-for="Country" placeholder="enter country" required />
+    <div>
+        <label for="Country">Country</label>
+        <input type="text" class="form-control" asp-for="Country" placeholder="Enter your country" required />
     </div>
-
-    <div class="form-group">
-        <label>State </label>
-        <input type="text" class="form-control" asp-for="State" placeholder="enter state" required />
+    <div>
+        <label for="State">State</label>
+        <input type="text" class="form-control" asp-for="State" placeholder="Enter your state" required />
     </div>
-    <div class="form-group">
-        <label>City </label>
-        <input type="text" class="form-control" asp-for="City" placeholder="enter city" required />
+    <div>
+        <label for="City">City</label>
+        <input type="text" class="form-control" asp-for="City" placeholder="Enter your city" required />
     </div>
-
-    
-    <div class="form-group">
-        <label>Set Password </label>
-        <input type="text" class="form-control" asp-for="Pwd" placeholder="enter password" required />
+    <div>
+        <label for="Pwd">Set Password</label>
+        <input type="text" class="form-control" asp-for="Pwd" placeholder="Set your password" required />
     </div>
-    <div class="form-group">
-        <label>Role</label>
-        <input type="text" class="form-control" asp-for="Role" placeholder="enter role" required />
-    </div>
-   
 
     <input type="submit" value="Register" class="btn btn-primary" />
     <input type="reset" value="Reset" class="btn btn-secondary" />
@@ -56,7 +47,7 @@
         </div>
     }
     else
-       if (ViewBag.status == "Error")
+    if (ViewBag.status == "Error")
     {
         <div class="alert alert-danger">
             @ViewBag.message

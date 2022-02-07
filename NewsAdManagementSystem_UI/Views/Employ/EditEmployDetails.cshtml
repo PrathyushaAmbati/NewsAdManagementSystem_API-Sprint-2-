@@ -10,54 +10,50 @@
 
 <form method="post">
     <h2>Edit Employee Details</h2>
-    @Html.HiddenFor(model=>model.EmpID)
-    <div class="form-group">
-        @Html.LabelFor(model=>model.EmpName)
-        @Html.EditorFor(model=>model.EmpName)
-        @Html.ValidationMessageFor(model=>model.EmpName)
+    <div>
+        <label for="Empname">Full Name</label>
+        <input type="text" class="form-control" asp-for="EmpName" />
     </div>
-    <div class="form-group">
-        @Html.LabelFor(model => model.EmpContactNo)
-        @Html.EditorFor(model => model.EmpContactNo)
-        @Html.ValidationMessageFor(model => model.EmpContactNo))
+    <div>
+        <label for="EmpContactNo">Mobile Number</label>
+        <input type="text" class="form-control" asp-for="EmpContactNo" />
     </div>
-    <div class="form-group">
-        @Html.LabelFor(model => model.EmailID)
-        @Html.EditorFor(model => model.EmailID)
-        @Html.ValidationMessageFor(model => model.EmailID)
+    <div>
+        <label for="EmailID">Email ID</label>
+        <input type="text" class="form-control" asp-for="EmailID" />
     </div>
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.Country)
-        @Html.EditorFor(model => model.Country)
-        @Html.ValidationMessageFor(model => model.Country)
+    <div>
+        <label for="Country">Country</label>
+        <input type="text" class="form-control" asp-for="Country" />
     </div>
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.State)
-        @Html.EditorFor(model => model.State)
-        @Html.ValidationMessageFor(model => model.State)
+    <div>
+        <label for="State">State</label>
+        <input type="text" class="form-control" asp-for="State" />
     </div>
-    <div class="form-group">
-        @Html.LabelFor(model => model.City)
-        @Html.EditorFor(model => model.City)
-        @Html.ValidationMessageFor(model => model.City)
+    <div>
+        <label for="City">City</label>
+        <input type="text" class="form-control" asp-for="City" />
     </div>
-
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.Pwd)
-        @Html.EditorFor(model => model.Pwd)
-        @Html.ValidationMessageFor(model => model.Pwd)
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(model => model.Role)
-        @Html.EditorFor(model => model.Role)
-        @Html.ValidationMessageFor(model => model.Role)
+    <div>
+        <label for="Pwd">Set Password</label>
+        <input type="text" class="form-control" asp-for="Pwd" />
     </div>
 
 
     <input type="submit" value="Update" class="btn btn-primary" />
-    
+    <hr />
+    @if (ViewBag.status == "Ok")
+    {
+        <div class="alert alert-success">
+            @ViewBag.message
+        </div>
+    }
+    else if (ViewBag.status == "Error")
+    {
+        <div class="alert alert-danger">
+            @ViewBag.message
+        </div>
+    }
+
 
 </form>
