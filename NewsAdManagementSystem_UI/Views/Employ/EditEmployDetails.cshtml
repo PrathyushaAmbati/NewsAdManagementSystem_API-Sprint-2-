@@ -5,81 +5,59 @@
 @{
 }
 <div>
-    <a class="btn btn-primary" asp-action="index">Show Employ Details</a>
+    <a class="btn btn-primary" asp-action="ShowEmployDetails">Show Employ Details</a>
 </div>
 
 <form method="post">
-
-    <div>
-        <h1>Edit Employee Details</h1>
-        <hr />
-        <table>
-            <tr>
-                <td>Employee ID</td>
-                <td>
-                    <input type="text" asp-for="EmpID" />
-                </td>
-            </tr>
-            <tr>
-                <td>Employee Name</td>
-                <td>
-                    <input type="text" asp-for="EmpName" />
-                </td>
-            </tr>
-            <tr>
-                <td>Contact Number</td>
-                <td>
-                    <input type="text" asp-for="EmpContactNo" />
-                </td>
-            </tr>
-            <tr>
-                <td>EmailID</td>
-                <td>
-                    <input type="text" asp-for="EmailID" />
-                </td>
-            </tr>
-            <tr>
-                <td>Country</td>
-                <td>
-                    <input type="text" asp-for="Country" />
-                </td>
-            </tr>
-            <tr>
-                <td>State</td>
-                <td>
-                    <input type="text" asp-for="State" />
-                </td>
-            </tr>
-            <tr>
-                <td>City</td>
-                <td>
-                    <input type="text" asp-for="City" />
-                </td>
-            </tr>
-            <tr>
-                <td>Set Password</td>
-                <td>
-                    <input type="text" asp-for="Pwd" />
-                </td>
-            </tr>
-            <tr>
-                <td>Employee Role</td>
-                <td>
-                    <input type="text" asp-for="Role" />
-                </td>
-            </tr>
-            <tr>
-                <td></td>
-                <td>
-                    <input type="submit" value="Update" class="btn btn-primary" />
-                </td>
-            </tr>
-        </table>
-
-        <div>
-            <hr />
-            @ViewBag.message
-            <hr />
-        </div>
+    <h2>Edit Employee Details</h2>
+    @Html.HiddenFor(model=>model.EmpID)
+    <div class="form-group">
+        @Html.LabelFor(model=>model.EmpName)
+        @Html.EditorFor(model=>model.EmpName)
+        @Html.ValidationMessageFor(model=>model.EmpName)
     </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.EmpContactNo)
+        @Html.EditorFor(model => model.EmpContactNo)
+        @Html.ValidationMessageFor(model => model.EmpContactNo))
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.EmailID)
+        @Html.EditorFor(model => model.EmailID)
+        @Html.ValidationMessageFor(model => model.EmailID)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Country)
+        @Html.EditorFor(model => model.Country)
+        @Html.ValidationMessageFor(model => model.Country)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.State)
+        @Html.EditorFor(model => model.State)
+        @Html.ValidationMessageFor(model => model.State)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.City)
+        @Html.EditorFor(model => model.City)
+        @Html.ValidationMessageFor(model => model.City)
+    </div>
+
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Pwd)
+        @Html.EditorFor(model => model.Pwd)
+        @Html.ValidationMessageFor(model => model.Pwd)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Role)
+        @Html.EditorFor(model => model.Role)
+        @Html.ValidationMessageFor(model => model.Role)
+    </div>
+
+
+    <input type="submit" value="Update" class="btn btn-primary" />
+    
+
 </form>

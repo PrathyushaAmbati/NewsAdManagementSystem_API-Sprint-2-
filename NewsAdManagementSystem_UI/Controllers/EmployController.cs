@@ -35,6 +35,7 @@ namespace NewsAdManagementSystem_UI.Controllers
             }
             return View(employResult);
         }
+        //GET Method
         public IActionResult Register()
         {
             return View();
@@ -65,10 +66,32 @@ namespace NewsAdManagementSystem_UI.Controllers
             return View();
         }
         
+        //GET Method
+        [HttpGet]
         public IActionResult EditEmployDetails(int EmpID)//Update EmployDetails 
         {
             
+
             return View();
+                        
+        }
+        [HttpPost]
+        public async Task<IActionResult> EditEmployDetails([FromBody]EmployDetails employDetails)
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                StringContent content = new StringContent(JsonConvert.SerializeObject(employDetails), Encoding.UTF8, "application/json");
+                string endPoint = _configuration["WebApiBaseUrl"] + "Employ/UpdateEmploy";
+                using (var response = await client.PutAsync(endPoint, content))
+                {
+                    if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                    {
+
+                        return RedirectToAction("ShowEmployDetails");
+                    }
+                }
+            }
+            return View(employDetails);
         }
 
     }

@@ -41,8 +41,8 @@
                 <td>@item.City</td>
                 <td>@item.Pwd</td>
                 <td>@item.Role</td>
-                <td><a asp-controller="EmployMVC" asp-action="EditEmployDetails" asp-route-EmpID="@item.EmpID" class="btn btn-primary">Edit</a></td>
-                <td><a asp-controller="EmployMVC" asp-action="DeleteEmployDetails" asp-route-EmpID="@item.EmpID" class="btn btn-danger">Delete</a></td>
+                <td><a asp-controller="Employ" asp-action="EditEmployDetails" asp-route-EmpID="@item.EmpID" class="btn btn-primary">Edit</a></td>
+                <td><a asp-controller="Employ" asp-action="DeleteEmployDetails" asp-route-EmpID="@item.EmpID" class="btn btn-danger">Delete</a></td>
             </tr>
         }
     </tbody>
