@@ -95,7 +95,7 @@ namespace NewsAdManagementSystem_UI.Controllers
             {
                 StringContent content = new StringContent(JsonConvert.SerializeObject(employDetails), Encoding.UTF8, "application/json");
                 string endPoint = _configuration["WebApiBaseUrl"] + "Employ/UpdateEmploy";
-                using (var response = await client.PostAsync(endPoint, content))
+                using (var response = await client.PutAsync(endPoint, content))
                 {
                     if (response.StatusCode == System.Net.HttpStatusCode.OK)
                     {
@@ -112,5 +112,55 @@ namespace NewsAdManagementSystem_UI.Controllers
             return View(employDetails);
         }
 
+        
+        public async Task<IActionResult> DeleteEmployDetails(int EmpID)//Delete EmployDetails 
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                string endPoint = _configuration["WebApiBaseUrl"] + "Employ/DeleteEmploy?EmpID=" + EmpID;
+                using (var response = await client.DeleteAsync(endPoint))
+                {
+                    if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                    {
+                        var result = await response.Content.ReadAsStringAsync();
+                        ViewBag.message = "Deleted Successfully";
+                    }
+                }
+            }
+            return RedirectToAction("ShowEmployDetails");
+
+        }
+
+
+       
+
+        ////POST Method
+        //[HttpPost]
+        //public async Task<IActionResult>DeleteEmployDetails(EmployDetails employDetails)
+        //{
+        //    using (HttpClient client = new HttpClient())
+        //    {
+        //        StringContent content = new StringContent(JsonConvert.SerializeObject(employDetails), Encoding.UTF8, "application/json");
+        //        string endPoint = _configuration["WebApiBaseUrl"] + "Employ/DeleteEmploy";
+        //        using (var response = await client.PostAsync(endPoint,content))
+        //        {
+        //            if (response.StatusCode == System.Net.HttpStatusCode.OK)
+        //            {
+        //                ViewBag.status = "Ok";
+        //                ViewBag.message = "Deleted Successfully";
+        //            }
+        //            else
+        //            {
+        //                ViewBag.status = "Error";
+        //                ViewBag.message = "Wrong Entries!";
+        //            }
+        //        }
+        //    }
+        //    return View(employDetails);
+        //}
+
     }
 }
+
+
+

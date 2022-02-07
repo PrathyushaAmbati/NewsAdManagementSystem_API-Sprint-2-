@@ -30,7 +30,7 @@ namespace NewsAdManagementSystem_API.Controllers
             _employService.UpdateEmploy(employDetails);
             return Ok("Updated Successfully");
         }
-        [HttpDelete]
+        [HttpDelete("DeleteEmploy")]
         public IActionResult DeleteEmploy(int EmpID)
         {
             _employService.DeleteEmploy(EmpID);
