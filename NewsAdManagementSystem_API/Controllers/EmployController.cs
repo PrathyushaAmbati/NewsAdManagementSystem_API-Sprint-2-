@@ -46,5 +46,18 @@ namespace NewsAdManagementSystem_API.Controllers
         {
             return _employService.GetEmployDetailsByID(EmpID);
         }
+        [HttpPost("Login")]
+        public IActionResult Login([FromBody] EmployDetails employDetails)
+        {
+            //EmployDetails employ = _employService.Login(employDetails);
+            if (employDetails != null)
+                return Ok("Login success!!");
+            else
+                return NotFound();
+        }
+
+
+
+
     }
 }

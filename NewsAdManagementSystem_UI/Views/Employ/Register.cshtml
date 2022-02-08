@@ -33,7 +33,11 @@
     </div>
     <div>
         <label for="Pwd">Set Password</label>
-        <input type="text" class="form-control" asp-for="Pwd" placeholder="Set your password" required />
+        <input type="text" class="form-control" asp-for="Pwd"  required />
+    </div>
+    <div>
+        <label for="Role">Role</label>
+        <input type="text" class="form-control" asp-for="Role" placeholder="Enter your Role" required />
     </div>
 
     <input type="submit" value="Register" class="btn btn-primary" />
@@ -47,7 +51,7 @@
         </div>
     }
     else
-    if (ViewBag.status == "Error")
+   if (ViewBag.status == "Error")
     {
         <div class="alert alert-danger">
             @ViewBag.message

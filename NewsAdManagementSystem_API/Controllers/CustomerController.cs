@@ -46,6 +46,15 @@ namespace NewsAdManagementSystem_API.Controllers
         {
             return _customerService.GetCustomerDetailsByID(CustID);
         }
+        [HttpPost("Login")]
+        public IActionResult Login([FromBody] CustomerDetailsClass customerDetailsClass)
+        {
+            //CustomerDetailsClass customer = _customerService.Login(customerDetailsClass);
+            if (customerDetailsClass != null)
+                return Ok("Login success!!");
+            else
+                return NotFound();
+        }
     }
 }
 

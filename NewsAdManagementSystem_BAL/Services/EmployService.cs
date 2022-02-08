@@ -33,5 +33,10 @@ namespace NewsAdManagementSystem_BAL.Services
         {
             return _iEmployRepository.GetEmployDetails();
         }
+
+        public EmployDetails Login(EmployDetails employDetails)
+        {
+            return _iEmployRepository.Login(employDetails);
+        }
     }
 }

@@ -34,6 +34,11 @@ namespace NewsAdManagementSystem_BAL.Services
         {
            return _iCustomerRepository.GetCustomerDetails();
         }
+
+        public CustomerDetailsClass Login(CustomerDetailsClass customerDetailsClass)
+        {
+            return _iCustomerRepository.Login(customerDetailsClass);
+        }
     }
 
 

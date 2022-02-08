@@ -11,9 +11,9 @@ namespace NewsAdManagementSystem_Entity.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int SNo { get; set; }
-
-        
-        public  int EmpID { get; set; }
+        //public virtual EmployDetails EmpID  { get; set; }
+        //[ForeignKey("EmpID")]
+        public int EmpId { get; set; }
 
        
         public int CustID { get; set; }

@@ -12,6 +12,8 @@ namespace NewsAdManagementSystem_DAL.Repository
         void DeleteEmploy(int EmpID);
          EmployDetails GetEmployDetailsByID(int EmpID);
          IEnumerable<EmployDetails> GetEmployDetails();
-        
+
+      EmployDetails Login(EmployDetails employDetails);
+
     }
 }

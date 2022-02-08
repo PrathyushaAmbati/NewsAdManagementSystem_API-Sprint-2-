@@ -46,5 +46,17 @@ namespace NewsAdManagementSystem_DAL.Repository
             _connection.EmployeeDetails.Update(employDetails);
             _connection.SaveChanges();
         }
+
+        public EmployDetails Login(EmployDetails employDetails)
+        {
+           
+            var result = _connection.EmployeeDetails.Where(obj => obj.EmailID == employDetails.EmailID && obj.Pwd == employDetails.Pwd).ToList();
+            if (result.Count > 0)
+            {
+               employDetails = result[0];
+            }
+            return employDetails;
+        }
+
     }
 }

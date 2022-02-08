@@ -1,0 +1,35 @@
+﻿@model NewsAdManagementSystem_Entity.Models.EmployDetails
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<h2>Employee Login</h2>
+<hr />
+<form method="post">
+    <div class="form-group">
+        <label for="EmailID">Username/Email ID</label>
+        <input type="text" class="form-control" asp-for="EmailID" required>
+    </div>
+    <div class="form-group">
+        <label for="Pwd">Password</label>
+        <input type="text" class="form-control" asp-for="Pwd" required>
+    </div>
+    <input type="submit" class="btn btn-primary" value="Login">
+    
+    <hr />
+    @if (ViewBag.status == "Ok")
+    {
+        <div class="alert alert-success">
+            @ViewBag.message
+        </div>
+    }
+    else if (ViewBag.status == "Error")
+    {
+        <div class="alert alert-danger">
+            @ViewBag.message
+        </div>
+    }
+    <hr />
+    <a asp-controller="Employ" asp-action="Register">Register</a>
+</form>

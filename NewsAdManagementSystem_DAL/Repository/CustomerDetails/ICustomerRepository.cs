@@ -12,5 +12,8 @@ namespace NewsAdManagementSystem_DAL.Repository.CustomerDetails
         void DeleteCustomer(int CustID);
         CustomerDetailsClass GetCustomerDetailsByID(int CustID);
         IEnumerable<CustomerDetailsClass> GetCustomerDetails();
+
+        CustomerDetailsClass Login(CustomerDetailsClass customerDetailsClass);
+
     }
 }

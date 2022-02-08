@@ -10,8 +10,10 @@ namespace NewsAdManagementSystem_Entity.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public  int CustID { get; set; }
+        public int CustID { get; set; }
         public string CustName { get; set; }
+
+        public string EmailID { get; set; }
         public string CustAddress { get; set; }
         public string CustContactNo { get; set; }
         public DateTime DOR { get; set; }

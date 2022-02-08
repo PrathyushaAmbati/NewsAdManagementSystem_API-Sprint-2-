@@ -27,6 +27,7 @@ namespace NewsAdManagementSystem_DAL.Repository
         {
             var customerDetails = _connection.CustomerDetails.Find(CustID);
             _connection.CustomerDetails.Remove(customerDetails);
+            _connection.SaveChanges();
         }
 
         public IEnumerable<CustomerDetailsClass> GetCustomerDetails()
@@ -44,5 +45,17 @@ namespace NewsAdManagementSystem_DAL.Repository
             _connection.Entry(customerDetailsClass).State = EntityState.Modified;
             _connection.SaveChanges();
         }
+
+        public CustomerDetailsClass Login(CustomerDetailsClass customerDetailsClass)
+        {
+
+            var result = _connection.CustomerDetails.Where(obj => obj.EmailID == customerDetailsClass.EmailID && obj.Pwd == customerDetailsClass.Pwd).ToList();
+            if (result.Count > 0)
+            {
+                customerDetailsClass = result[0];
+            }
+            return customerDetailsClass;
+        }
+
     }
 }

@@ -1,5 +1,50 @@
-﻿@*
+﻿@model NewsAdManagementSystem_Entity.Models.AdvertisementDetailsClass
+@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
 }
+
+<form method="post">
+    <h2>Edit Advertisement Entry</h2>
+
+    <div>
+        <label for="PageNo">Page Number</label>
+        <input type="text" class="form-control" asp-for="PageNo" required />
+    </div>
+    <div>
+        <label for="PageLocation">Page Location</label>
+        <input type="text" class="form-control" asp-for="PageLocation" required />
+    </div>
+    <div>
+        <label for="BWColorCost">Black & WhitePage Cost</label>
+        <input type="text" class="form-control" asp-for="BWColorCost" required />
+    </div>
+    <div>
+        <label for="ColorCost">ColorPage Cost</label>
+        <input type="text" class="form-control" asp-for="ColorCost" required />
+    </div>
+    <div>
+        <label for="Title">Title</label>
+        <input type="text" class="form-control" asp-for="Title" required />
+    </div>
+    <input type="submit" value="Update" class="btn btn-success" />
+
+    <hr />
+    <td><a asp-controller="Advertisement" asp-action="ShowAdvertisementDetails"  class="btn btn-primary">Back to List</a></td>
+
+
+    @if (ViewBag.status == "Ok")
+    {
+        <div class="alert alert-success">
+            @ViewBag.message
+        </div>
+    }
+    else if (ViewBag.status == "Error")
+    {
+        <div class="alert alert-danger">
+            @ViewBag.message
+        </div>
+    }
+
+</form>
