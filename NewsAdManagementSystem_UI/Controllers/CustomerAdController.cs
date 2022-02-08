@@ -18,6 +18,7 @@ namespace NewsAdManagementSystem_UI.Controllers
         {
             _configuration = configuration;
         }
+        #region ShowCustomerAdDetails
         public async Task<IActionResult> ShowCustomerAdDetails()//Select*from CustomerAdDetails
         {
             IEnumerable<CustomerAdDetailsClass> customerAdResult = null;
@@ -35,8 +36,9 @@ namespace NewsAdManagementSystem_UI.Controllers
             }
             return View(customerAdResult);
         }
-
+        #endregion ShowCustomerAdDetails
         //Get Method
+        #region BookAdSlot
         public IActionResult BookAdSlot()
         {
             return View();
@@ -69,3 +71,4 @@ namespace NewsAdManagementSystem_UI.Controllers
 
     }
 }
+#endregion BookAdSlot

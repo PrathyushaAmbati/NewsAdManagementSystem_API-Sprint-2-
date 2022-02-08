@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - NewsAdManagementSystem_UI</title>
+    <title>@ViewData["Title"] - Newspaper Advertisement Management System</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
@@ -17,29 +17,85 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Employ" asp-action="Register">Employee Registration</a>
-                        </li>
+                    
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-primary">Advertisement Details</button>
+                            <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="sr-only">Toggle Dropdown</span>
+                            </button>
+                            <div class="dropdown-menu">
 
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Employ" asp-action="Login">Employee Login</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Customer" asp-action="Register">Customer Registration</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Customer" asp-action="Login">Customer Login</a>
-                        </li>
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Advertisement" asp-action="AdvertisementEntry" class="dropdown-item">
+                                    Advertisement Entries
+                                </a>
 
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Privacy" asp-action="Privacy">Privacy</a>
-                        </li>
 
-                    </ul>
+                                <div class="dropdown-divider"></div>
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Advertisement" asp-action="ShowAdvertisementDetails" class="dropdown-item">Show Advertisement Details</a>
+                            </div>
+                        </div>
+                  
+                <div class="btn-group">
+                    <button type="button" class="btn btn-warning">Customer Details</button>
+                    <button type="button" class="btn btn-warning dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="sr-only">Toggle Dropdown</span>
+                    </button>
+                    <div class="dropdown-menu">
+
+
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Customer" asp-action="Register" class="dropdown-item">
+                            Registration
+                        </a>
+
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Customer" asp-action="Login" class="dropdown-item">Login</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Customer" asp-action="ShowCustomerDetails" class="dropdown-item">
+                            Show Customer Details
+                        </a>
+
+                    </div>
+                </div>
+
+
+
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-info">Employee Details</button>
+                        <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="sr-only">Toggle Dropdown</span>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Employ" asp-action="Register" class="dropdown-item">
+                                Register
+                            </a>
+
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Employ" asp-action="Login" class="dropdown-item">Login</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Employ" asp-action="ShowEmployDetails" class="dropdown-item">ShowEmployDetails</a>
+                        </div>
+                    </div>
+                    @*<ul class="navbar-nav flex-grow-1">
+            <li class="nav-item">
+                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark" asp-area="" asp-controller="Employ" asp-action="Register">Employee Registration</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link text-dark" asp-area="" asp-controller="Employ" asp-action="Login">Employee Login</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark" asp-area="" asp-controller="Customer" asp-action="Register">Customer Registration</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-dark" asp-area="" asp-controller="Customer" asp-action="Login">Customer Login</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link text-dark" asp-area="" asp-controller="Privacy" asp-action="Privacy">Privacy</a>
+            </li>
+
+        </ul>*@
                 </div>
             </div>
         </nav>

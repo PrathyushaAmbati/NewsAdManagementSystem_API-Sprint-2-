@@ -4,32 +4,98 @@
 *@
 @{
 }
-<h2>Customer Login</h2>
-<hr />
-<form method="post">
-    <div class="form-group">
-        <label for="EmailID">Username/Email ID</label>
-        <input type="text" class="form-control" asp-for="EmailID" required>
-    </div>
-    <div class="form-group">
-        <label for="Pwd">Password</label>
-        <input type="text" class="form-control" asp-for="Pwd" required>
-    </div>
-    <input type="submit" class="btn btn-primary" value="Login">
-    
+@*<h2>Customer Login</h2>
     <hr />
-    @if (ViewBag.status == "Ok")
-    {
-        <div class="alert alert-success">
-            @ViewBag.message
+    <form method="post">
+        <div class="form-group">
+            <label for="EmailID">Username/Email ID</label>
+            <input type="text" class="form-control" asp-for="EmailID" required>
         </div>
-    }
-    else if (ViewBag.status == "Error")
-    {
-        <div class="alert alert-danger">
-            @ViewBag.message
+        <div class="form-group">
+            <label for="Pwd">Password</label>
+            <input type="text" class="form-control" asp-for="Pwd" required>
         </div>
+        <input type="submit" class="btn btn-primary" value="Login">
+
+        <hr />
+        @if (ViewBag.status == "Ok")
+        {
+            <div class="alert alert-success">
+                @ViewBag.message
+            </div>
+        }
+        else if (ViewBag.status == "Error")
+        {
+            <div class="alert alert-danger">
+                @ViewBag.message
+            </div>
+        }
+        <hr />
+        <a asp-controller="Employ" asp-action="Register">Register</a>
+    </form>*@
+
+
+<style>
+    .heading {
+        justify-content: center;
+        text-align: center;
+        display: flex;
     }
-    <hr />
-    <a asp-controller="Employ" asp-action="Register">Register</a>
-</form>
+
+    h4 {
+        color: White;
+    }
+
+    img {
+        height: 1500px;
+        width: 1500px;
+    }
+</style>
+<div id="heading" class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 bg-primary">
+    <!-- Copyright -->
+    <div class="text-white mb-3 mb-md-0">
+        <h3>User Login</h3>
+    </div>
+
+</div>
+<br />
+<br />
+<section class="vh-100">
+    <div class="container-fluid h-custom">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-md-9 col-lg-6 col-xl-5">
+                <img src="~/css/Pic1.png" class="img-thumbnail"
+                     alt="Sample image">
+            </div>
+            <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+                <form method="post">
+
+                    <div class="form-group">
+                        <label for="EmailID">Username/Email ID</label>
+                        <input type="text" class="form-control" asp-for="EmailID" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="Pwd">Password</label>
+                        <input type="text" class="form-control" asp-for="Pwd" required>
+                    </div>
+
+
+
+                    <div class="text-center text-lg-start mt-4 pt-2">
+                        <input type="submit" class="btn btn-primary" value="Login">
+                        <hr />
+                        <a asp-controller="Customer" asp-action="Register">Register</a>
+
+
+                        <br />
+
+                        <br />
+                        <br />
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+

@@ -4,8 +4,8 @@
 *@
 @{
 }
-<form method="post">
-    <h2>Customer Registration</h2>
+
+@*<h2>Customer Registration</h2>
     <div>
         <label for="Custname">Full Name</label>
         <input type="text" class="form-control" asp-for="CustName" placeholder="Enter your name" required />
@@ -47,6 +47,102 @@
         <div class="alert alert-danger">
             @ViewBag.message
         </div>
-    }
+    }*@
 
-</form>
+    <style>
+        .heading {
+            justify-content: center;
+            text-align: center;
+            display: flex;
+        }
+
+        h4 {
+            color: White;
+        }
+
+        img {
+            height: 1500px;
+            width: 1500px;
+        }
+    </style>
+    <div id="heading" class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 bg-primary">
+        <!-- Copyright -->
+        <div class="text-white mb-3 mb-md-0">
+            <h3>Customer Registration</h3>
+        </div>
+
+    </div>
+
+
+
+    <br />
+    <br />
+
+    <section class="vh-100">
+        <div class="container-fluid h-custom">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-md-9 col-lg-6 col-xl-5">
+                    <img src="~/css/Pic2.png" class="img-thumbnail"
+                         alt="Sample image">
+                </div>
+
+                <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+                    <h2>Customer Registration</h2>
+                    <form method="post">
+                        <div>
+                            <label for="Custname">Full Name</label>
+                            <input type="text" class="form-control" asp-for="CustName" placeholder="Enter your name" required />
+                        </div>
+                        <div>
+                            <label for="EmailID">Email ID</label>
+                            <input type="text" class="form-control" asp-for="EmailID" required />
+                        </div>
+                        <div>
+                            <label for="CustAddress">Address</label>
+                            <input type="text" class="form-control" asp-for="CustAddress" required />
+                        </div>
+                        <div>
+                            <label for="CustContactNo">Mobile Number</label>
+                            <input type="text" class="form-control" asp-for="CustContactNo" required />
+                        </div>
+                        <div>
+                            <label for="DOR">Registration Date</label>
+                            <input type="text" class="form-control" asp-for="DOR" required />
+                        </div>
+
+                        <div>
+                            <label for="Pwd">Set Password</label>
+                            <input type="password" class="form-control" asp-for="Pwd" placeholder="Set your password" required />
+                        </div>
+
+                        <input type="submit" value="Register" class="btn btn-primary" />
+                        <input type="reset" value="Reset" class="btn btn-secondary" />
+                        <hr />
+                        @if (ViewBag.status == "Ok")
+                        {
+                            <div class="alert alert-success">
+                                @ViewBag.message
+                            </div>
+                        }
+                        else if (ViewBag.status == "Error")
+                        {
+                            <div class="alert alert-danger">
+                                @ViewBag.message
+                            </div>
+                        }
+
+                    </form>
+                        
+                </div>
+                        <br />
+
+                        <br />
+                        <br />
+                    </div>
+
+
+                </div>
+            
+
+    </section>
+

@@ -5,6 +5,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\css\AdminLogin.PNG" />
+    <Content Remove="wwwroot\css\Login.png" />
+    <Content Remove="wwwroot\css\Registration.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\css\AdminLogin.PNG" />
+    <None Include="wwwroot\css\Login.png" />
+    <None Include="wwwroot\css\Registration.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
   </ItemGroup>
 
